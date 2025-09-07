@@ -10,13 +10,14 @@ import { Name } from './components/Name.tsx'
 import { JobInfo } from './components/JobInfo.tsx'
 import { Contact } from './components/Contact.tsx'
 import myImage from './assets/my-image.jpg'
+import { Section } from './components/Section.tsx'
 
 export default function App(){
   return (
     <>
     <Resume>
       <Header>
-        <div className='flex flex-col justify-center items-start h-full w-[70%] pl-10'>
+        <div className='flex flex-col justify-center items-start h-full w-[70%]'>
           <Name name='Jestaly Joseph Castillo'/>
           <JobInfo job='Software Developer Intern'/>
           <Contact address='Pasig City, Manila'
@@ -30,7 +31,12 @@ export default function App(){
         </div>
       </Header>
       <Summary>
-
+        <Section title='Summary'/>
+        <p className='text-justify indent-8 font-domine text-[1.5em] mt-4'>
+          Third year Computer Science student with a strong foundation in full stack development and experienced in
+          building real world projects using various frameworks and programming languages. Adaptable, detail
+          oriented, and eager to contribute while learning and growing in a collaborative environment.
+        </p>
       </Summary>
       <TechSkills>
 

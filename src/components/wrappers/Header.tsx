@@ -6,7 +6,7 @@ type ChildrenProps = {
 export function Header({children}: ChildrenProps){
     return(
         <>
-        <div className='flex flex-row items-start justify-start w-full h-[300px] rounded-t-4xl'>
+        <div className='flex flex-row items-start justify-start w-full h-[300px] rounded-t-4xl pl-10'>
             {children}
         </div>
         </>
