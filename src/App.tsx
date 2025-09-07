@@ -12,6 +12,10 @@ import { Contact } from './components/Contact.tsx'
 import myImage from './assets/my-image.jpg'
 import { Section } from './components/Section.tsx'
 import {Layer} from './components/Layer.tsx'
+import {ProjectView} from './components/ProjectView.tsx'
+import project1 from './assets/react.svg'
+import leftArrow from './assets/left.png'
+import rightArrow from './assets/right.png'
 
 export default function App(){
   return (
@@ -54,7 +58,14 @@ export default function App(){
         </div>
       </TechSkills>
       <Projects>
-
+        <Section title='Projects'/>
+        <ProjectView>
+          <img className='hover:cursor-pointer hover:scale-105 w-15 duration-300' src={leftArrow}/>  
+          <div className='flex justify-center items-center w-[80%] h-full'>
+            <img className='w-[70%] h-[70%]' src={project1}/>
+          </div>
+          <img className='hover:cursor-pointer hover:scale-105 w-15 duration-300' src={rightArrow}/>
+        </ProjectView>
       </Projects>
       <Education>
         
