@@ -7,9 +7,10 @@ type ProjectProps={
     title:string;
     codeLink:string;
     deployLink:string;
+    description:string;
 }
 
-export function Project({image, title, codeLink, deployLink}:ProjectProps) {
+export function Project({image, title, codeLink, deployLink, description}:ProjectProps) {
     const [hovered, setHovered] = useState<boolean>(false);
 
     return(
@@ -18,11 +19,11 @@ export function Project({image, title, codeLink, deployLink}:ProjectProps) {
             <img className="w-8" src={hovered? githubWhiteLogo : githubBlackLogo}/>
         </a>
         <h1 className="font-domine font-bold text-[1.5em]">{title}</h1>
-        <div className='flex flex-row justify-between items-center w-full h-[70%]'>
+        <div className='flex flex-row justify-between items-center w-full h-[70%] gap-4'>
             <a className='w-[70%] h-[90%]' href={deployLink}>
-                <img className='w-[100%] h-[100%]' src={image}/>
+                <img className='w-[100%] h-[95%] object-contain' src={image}/>
             </a>
-            <p className='w-[50%] text-justify font-domine text-[1.1em]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fugit nulla, fuga molestiae modi esse eius, voluptatum magni iste accusantium iusto sint nobis asperiores animi minima. Ut necessitatibus error velit.</p>
+            <p className='w-[50%] text-justify font-domine text-[1.1em]'>{description}</p>
         </div>
         </>
     )

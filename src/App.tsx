@@ -13,12 +13,21 @@ import myImage from './assets/my-image.jpg'
 import { Section } from './components/Section.tsx'
 import {Layer} from './components/Layer.tsx'
 import {ProjectView} from './components/ProjectView.tsx'
-import project1 from './assets/react.svg'
 import { Button } from './components//Button.tsx'
 import leftArrow from './assets/left.png'
 import rightArrow from './assets/right.png'
 import {Project} from './components/Project.tsx'
 import { useState } from 'react'
+
+import predictaBoardAI from './assets/projects/predictaBoardAI.png'
+import kofei from './assets/projects/kofei.png'
+import credCheckAI from './assets/projects/credCheckAI.png'
+import gradeManagementSystem from './assets/projects/gradeManagementSystem.png'
+import stockRecommendationSystem from './assets/projects/stockRecommendationSystem.png'
+import spendLite from './assets/projects/spendLite.png'
+import libraryManagementSystem from './assets/projects/libraryManagementSystem.png'
+import ecome from './assets/projects/ecome.png'
+import rpsGame from './assets/projects/rpsGame.png'
 
 export default function App(){
   const [index, setIndex] = useState<number>(0);
@@ -26,49 +35,58 @@ export default function App(){
 
   const projects = [
     {title:'PredictaBoard AI', 
-      image:project1, 
-      codeLink:'https://github.com/jc14-ai/AI-Powered-Stock-Market-Dashboard',
-      deployLink:''},
+      image:predictaBoardAI, 
+      codeLink:'https://github.com/jc14-ai/PredictaBoard-AI',
+      deployLink:'',
+      description:'A web application that utilizes machine learning algorithms to predict next price and provide technical analysis tools. It Visualizes stock data with interactive charts.'},
 
       {title:'Kofei', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''},
+      image:kofei, 
+      codeLink:'https://github.com/jc14-ai/Kofei', 
+      deployLink:'',
+      description:'Web application that allows users to order donut & coffee. Admins can manage orders, products, and view sales reports.'},
 
     {title:'CredCheck AI', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''},
+      image:credCheckAI, 
+      codeLink:'https://github.com/jc14-ai/CredCheck-AI', 
+      deployLink:'https://credcheck-ai.onrender.com/',
+      description:'An AI-powered web application that evaluates the credibility of news articles using basic NLP technique and Logistic Regression model.'},
     
     {title:'Grade Management System', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''},
+      image:gradeManagementSystem, 
+      codeLink:'https://github.com/jc14-ai/Grade-Management-System', 
+      deployLink:'',
+      description:'Desktop application that allows teachers to manage student grades, attendance, and generate reports. Students can view their grades and attendance. Admin can manage users and system settings.'},
 
       {title:'Stock Recommendation System', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''},
+      image:stockRecommendationSystem, 
+      codeLink:'https://github.com/jc14-ai/Stock-Recommender-via-Prompt-Engineering', 
+      deployLink:'',
+      description:'Recommend stocks based on AI analysis of historical data and market trends. It also ranks stocks based on how well each stocks perform. Provides insights to help users make informed investment decisions.'},
     
     {title:'SpendLite', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''},
+      image:spendLite, 
+      codeLink:'https://github.com/jc14-ai/Expense-Tracker-Spendlite', 
+      deployLink:'',
+      description:'Track your expenses and manage your budget with SpendLite. A desktop application that allows users to add, edit, and delete expenses. It also provides visualizations of your spending habits.'},
     
     {title:'Library Management System', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''},
+      image:libraryManagementSystem, 
+      codeLink:'https://github.com/jc14-ai/Library-Management-System-V2', 
+      deployLink:'',
+      description:'Manage library operations such as book inventory, member management, and borrowing/returning of books. It also provides reports and analytics to help librarians make informed decisions.'},
 
     {title:'Ecome', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''},
+      image:ecome, 
+      codeLink:'https://github.com/jc14-ai/E-come', 
+      deployLink:'',
+      description:'track your expenses and manage your budget with SpendLite. A Mobile application that allows users to add, edit, and delete expenses. Supports user authentication and data synchronization with Firebase.'},
 
       {title:'Rock, Paper, Scissors!', 
-      image:project1, 
-      codeLink:'', 
-      deployLink:''}
+      image:rpsGame, 
+      codeLink:'https://github.com/jc14-ai/RPS-Game', 
+      deployLink:'https://jc14-ai.github.io/RPS-Game/',
+      description:'Web-based Rock, Paper, Scissors game using HTML, CSS, and JavaScript. Play against the computer and see who wins!'},
     ]
 
   const nextProject = ():void => {
@@ -133,7 +151,7 @@ export default function App(){
         <ProjectView>
           <Button arrow={leftArrow} click={():void => prevProject()}/>
           <div className={`flex flex-col justify-center items-center w-[80%] h-[100%] ${ fade? 'opacity-0': 'opacity-100' } duration-500`}>
-            <Project image={projects[index]['image']} title={projects[index]['title']} codeLink={projects[index]['codeLink']} deployLink={projects[index]['deployLink']}/>
+            <Project image={projects[index]['image']} title={projects[index]['title']} codeLink={projects[index]['codeLink']} deployLink={projects[index]['deployLink']} description={projects[index]['description']}/>
           </div>
           <Button arrow={rightArrow} click={():void => nextProject()}/>
         </ProjectView>
