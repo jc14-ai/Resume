@@ -22,11 +22,54 @@ import { useState } from 'react'
 
 export default function App(){
   const [index, setIndex] = useState<number>(0);
-  const [fade, setFade] = useState<boolean>(true);
+  const [fade, setFade] = useState<boolean>(false);
 
   const projects = [
-    {title:'React Logo', image:project1},
-    {title:'React Logo2', image:project1}]
+    {title:'PredictaBoard AI', 
+      image:project1, 
+      codeLink:'https://github.com/jc14-ai/AI-Powered-Stock-Market-Dashboard',
+      deployLink:''},
+
+      {title:'Kofei', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''},
+
+    {title:'CredCheck AI', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''},
+    
+    {title:'Grade Management System', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''},
+
+      {title:'Stock Recommendation System', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''},
+    
+    {title:'SpendLite', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''},
+    
+    {title:'Library Management System', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''},
+
+    {title:'Ecome', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''},
+
+      {title:'Rock, Paper, Scissors!', 
+      image:project1, 
+      codeLink:'', 
+      deployLink:''}
+    ]
 
   const nextProject = ():void => {
     if(index >= projects.length - 1) return;
@@ -89,8 +132,8 @@ export default function App(){
         <Section title='Projects'/>
         <ProjectView>
           <Button arrow={leftArrow} click={():void => prevProject()}/>
-          <div className={`flex flex-col justify-center items-center w-[80%] h-[90%] ${ fade? 'opacity-0': 'opacity-100' } duration-500`}>
-            <Project image={projects[index]['image']} title={projects[index]['title']}/>
+          <div className={`flex flex-col justify-center items-center w-[80%] h-[100%] ${ fade? 'opacity-0': 'opacity-100' } duration-500`}>
+            <Project image={projects[index]['image']} title={projects[index]['title']} codeLink={projects[index]['codeLink']} deployLink={projects[index]['deployLink']}/>
           </div>
           <Button arrow={rightArrow} click={():void => nextProject()}/>
         </ProjectView>
