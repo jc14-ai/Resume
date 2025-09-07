@@ -14,6 +14,7 @@ import { Section } from './components/Section.tsx'
 import {Layer} from './components/Layer.tsx'
 import {ProjectView} from './components/ProjectView.tsx'
 import project1 from './assets/react.svg'
+import { Button } from './components//Button.tsx'
 import leftArrow from './assets/left.png'
 import rightArrow from './assets/right.png'
 
@@ -60,15 +61,26 @@ export default function App(){
       <Projects>
         <Section title='Projects'/>
         <ProjectView>
-          <img className='hover:cursor-pointer hover:scale-105 w-15 duration-300' src={leftArrow}/>  
+          <Button arrow={leftArrow}/>
           <div className='flex justify-center items-center w-[80%] h-full'>
             <img className='w-[70%] h-[70%]' src={project1}/>
           </div>
-          <img className='hover:cursor-pointer hover:scale-105 w-15 duration-300' src={rightArrow}/>
+          <Button arrow={rightArrow}/>
         </ProjectView>
       </Projects>
       <Education>
-        
+        <Section title='Education'/>
+        <div className='flex flex-col gap-3 pl-5 pr-5 mt-3'>
+          <div className='flex flex-row w-full h-fit text-[1.5em] gap-8'>
+            <h1 className='font-bold'>Bachelor of Science in Computer Science</h1>
+            <h1>August 2023 - Present</h1>
+          </div>
+          <h1 className='text-[1.4em]'>Pamantasan ng Lungsod ng Pasig</h1>
+          <ul className='list-disc pl-8 text-[1.2em]'>
+            <li className=''>3rd Year Student</li>
+            <li className=''>Thesis on "MediRehabAI: Rehabilitation Exercise Monitoring Using MediaPipe Pose with Long Short-Term Memory Layer (LSTM)”</li>
+          </ul>
+        </div>
       </Education>
       <Certification>
 

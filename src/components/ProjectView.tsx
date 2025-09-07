@@ -5,7 +5,7 @@ type ProjectViewProps = {
 export function ProjectView({children}: ProjectViewProps){
     return(
         <>
-        <div className="flex flex-row justify-between items-center w-full h-full mt-4">
+        <div className="flex flex-row justify-between items-center w-full h-[90%]">
             {children}
         </div>
         </>
