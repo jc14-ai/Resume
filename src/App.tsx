@@ -17,15 +17,42 @@ import project1 from './assets/react.svg'
 import { Button } from './components//Button.tsx'
 import leftArrow from './assets/left.png'
 import rightArrow from './assets/right.png'
+import {Project} from './components/Project.tsx'
+import { useState } from 'react'
 
 export default function App(){
+  const [index, setIndex] = useState<number>(0);
+  const [fade, setFade] = useState<boolean>(true);
+
+  const projects = [
+    {title:'React Logo', image:project1},
+    {title:'React Logo2', image:project1}]
+
+  const nextProject = ():void => {
+    if(index >= projects.length - 1) return;
+    setFade(true);
+    setTimeout(():void => {
+      setIndex((i:number):number => i + 1)
+      setFade(false)
+    }, 500);
+  }
+
+  const prevProject = ():void => {
+    if(index === 0) return;
+    setFade(true);
+    setTimeout(():void => {
+      setIndex((i:number):number => i - 1)
+      setFade(false)
+    }, 500);
+  }
+
   return (
     <>
     <Resume>
       <Header>
         <div className='flex flex-col justify-center items-start h-full w-[70%]'>
           <Name name='Jestaly Joseph Castillo'/>
-          <JobInfo job='Software Developer Intern'/>
+          <JobInfo job='Software Developer'/>
           <Contact address='Pasig City, Manila'
                     email='mailto:jestalycastillo15@gmail.com' 
                     linkedin='https://www.linkedin.com/in/jestaly-a-castillo-a738b1326/'
@@ -61,11 +88,11 @@ export default function App(){
       <Projects>
         <Section title='Projects'/>
         <ProjectView>
-          <Button arrow={leftArrow}/>
-          <div className='flex justify-center items-center w-[80%] h-full'>
-            <img className='w-[70%] h-[70%]' src={project1}/>
+          <Button arrow={leftArrow} click={():void => prevProject()}/>
+          <div className={`flex flex-col justify-center items-center w-[80%] h-[90%] ${ fade? 'opacity-0': 'opacity-100' } duration-500`}>
+            <Project image={projects[index]['image']} title={projects[index]['title']}/>
           </div>
-          <Button arrow={rightArrow}/>
+          <Button arrow={rightArrow} click={():void => nextProject()}/>
         </ProjectView>
       </Projects>
       <Education>
