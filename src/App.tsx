@@ -11,6 +11,7 @@ import { JobInfo } from './components/JobInfo.tsx'
 import { Contact } from './components/Contact.tsx'
 import myImage from './assets/my-image.jpg'
 import { Section } from './components/Section.tsx'
+import {Layer} from './components/Layer.tsx'
 
 export default function App(){
   return (
@@ -24,7 +25,7 @@ export default function App(){
                     email='mailto:jestalycastillo15@gmail.com' 
                     linkedin='https://www.linkedin.com/in/jestaly-a-castillo-a738b1326/'
                     github='https://github.com/jc14-ai' 
-                    phone='+63906583627'/>
+                    phone='+639065836247'/>
         </div>
         <div className='flex justify-center items-center w-[30%] h-full'>
           <img className='w-[75%] h-[79%] object-cover rounded-[200px] bg-black hover:scale-101 duration-100' src={myImage}/>
@@ -39,7 +40,18 @@ export default function App(){
         </p>
       </Summary>
       <TechSkills>
-
+        <Section title='Technologies Used'/>
+        <div className='flex flex-row items-start justify-between mt-4 w-full h-full font-domine pl-2 pr-2'>
+          <div className='flex flex-col gap-3 item-start w-[45%] h-full'>
+            <Layer layer='Backend' technologies='Node.js, Express.js, Flask, PHP, Java'/>
+            <Layer layer='Database' technologies='NoSQL, MySQL, Firestore'/>
+          </div>
+          <div className='flex flex-col gap-3 item-start w-[55%] h-full'>
+            <Layer layer='Frontend' technologies='HTML5, CSS3, JavaScript, JQuery, BootStrap, React.js, TailwindCSS'/>
+            <Layer layer='Tools' technologies='VSCode, Android Studio, Git, Github, PhpMyAdmin, Figma, Drawio'/>
+            <Layer layer='Others' technologies='OOP, DSA, REST API, Machine Learning, EDA'/>
+          </div>
+        </div>
       </TechSkills>
       <Projects>
 
