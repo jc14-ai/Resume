@@ -77,16 +77,32 @@ export default function App(){
           </div>
           <h1 className='text-[1.4em]'>Pamantasan ng Lungsod ng Pasig</h1>
           <ul className='list-disc pl-8 text-[1.2em]'>
-            <li className=''>3rd Year Student</li>
-            <li className=''>Thesis on "MediRehabAI: Rehabilitation Exercise Monitoring Using MediaPipe Pose with Long Short-Term Memory Layer (LSTM)”</li>
+            <li>3rd Year Student</li>
+            <li>Thesis on "MediRehabAI: Rehabilitation Exercise Monitoring Using MediaPipe Pose with Long Short-Term Memory Layer (LSTM)”</li>
           </ul>
         </div>
       </Education>
       <Certification>
-
+        <Section title='Certifications'/>
+        <ul className='list-disc pl-8 text-[1.4em] font-domine mt-3'>
+          <li>Python Programming - DataCamp, 2025</li>
+          <li>Data Manipulation with Pandas - DataCamp, 2025</li>
+          <li>Joining Data with Pandas - DataCamp, 2025</li>
+          <li>Supervised Learning with scikit-learn - DataCamp, 2025</li>
+        </ul>
       </Certification>
       <Additional>
-
+        <Section title='Additional Information'/>
+        <ul className='list-disc pl-8 text-[1.4em] font-domine mt-3'>
+          <li><b>Languages:</b> English, Filipino</li>
+          <li>
+            <b>Awards/Activities</b>
+            <ul className='list-disc pl-8'>
+              <li>Participant, Java Programming Competition - Tech Odyssey, 2024</li>
+              <li>Participant, National IT Skills Competition - ISITE, 2025</li>
+            </ul>
+          </li>
+        </ul>
       </Additional>
     </Resume>
     </>

@@ -6,7 +6,7 @@ type ChildrenProps = {
 export function Additional({children}: ChildrenProps){
     return(
         <>
-        <div className='flex flex-col items-start justify-start bg- w-full h-[310px] rounded-b-4xl border-2 pl-15 pr-15'>
+        <div className='flex flex-col items-start justify-start bg- w-full h-[310px] rounded-b-4xl pl-15 pr-15'>
             {children}
         </div>
         </>
